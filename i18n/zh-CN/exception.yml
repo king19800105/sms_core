@@ -1,0 +1,10 @@
+exception:
+  container init: 容器初始化失败
+  db-connection: 数据库实例链接失败
+  cache-connection: 缓存实例链接失败
+  queue-client-connection: 队列服务客户端链接失败
+  yml-parser: YAML文件解析失败
+  server-mode: 服务模式设置失败
+  data-type: 不支持的数据类型
+  log-file: 日志文件创建失败
+  log-save: 日志存储类型不存在

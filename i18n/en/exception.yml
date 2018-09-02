@@ -1,0 +1,10 @@
+exception:
+  container init: container init failed
+  db-connection: database connection failed
+  cache-connection: cache connection failed
+  queue-client-connection: queue connection failed
+  yml-parser: yaml file parser failed
+  server-mode: server mode set faild
+  data-type: illegal data type
+  log-file: log file create error
+  log-save: illegal log save type

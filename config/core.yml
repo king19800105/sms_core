@@ -1,0 +1,23 @@
+core:
+  log-types:
+    - file
+    - db
+  path:
+    config-dir: config
+    i18n-dir: i18n
+    env-file: .env.yml
+    request-log: storage/logs/request.log
+    error-log: storage/logs/error.log
+  container-scope:
+    - app
+    - core
+  db:
+    charset: utf8
+    max-idle: 20
+    max-open: 200
+  cache:
+    min-idle-conns: 10
+    pool-size: 100
+  queue:
+    max-in-flight: 20
+    lookupd-poll-interval: 5
