@@ -51,7 +51,8 @@ func Load() {
 		loadDBConnection().
 		loadCacheConnection().
 		loadQueueConnection().
-		loadContainer()
+		loadContainer().
+		done()
 }
 
 
@@ -183,4 +184,8 @@ func (c *Core) getInstanceBaseInfo(instanceType string) FileContent {
 	}
 
 	return FileContentMerge(envContent.(FileContent), coreContent.(FileContent))
+}
+
+func (c *Core) done() {
+	delete(c.resource, "core")
 }
