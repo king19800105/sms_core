@@ -4,7 +4,7 @@ import (
 	"github.com/nsqio/go-nsq"
 	"time"
 	"strconv"
-	"gitee.com/king19800105/husms_sms_core/app/constants/message"
+	"github.com/king19800105/sms_core/app/constants/message"
 )
 
 type NSQConnection struct {

@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"gitee.com/king19800105/husms_sms_core/core"
+	"github.com/king19800105/sms_core/core"
 	"github.com/gin-gonic/gin"
 )
 

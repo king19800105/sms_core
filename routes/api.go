@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"gitee.com/king19800105/husms_sms_core/app/http/controllers"
+	"github.com/king19800105/sms_core/app/http/controllers"
 )
 
 // 发送api ：http://www.husms.com/sms/api

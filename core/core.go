@@ -2,7 +2,7 @@ package core
 
 import (
 	"github.com/sarulabs/di"
-	"gitee.com/king19800105/husms_sms_core/app/providers"
+	"github.com/king19800105/sms_core/app/providers"
 )
 
 const CORE_FILE = "config/core.yml"

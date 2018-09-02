@@ -1,10 +1,10 @@
 package main
 
 import (
-	_ "gitee.com/king19800105/husms_sms_core/bootstrap"
-	"gitee.com/king19800105/husms_sms_core/bootstrap"
+	_ "github.com/king19800105/sms_core/bootstrap"
+	"github.com/king19800105/sms_core/bootstrap"
 	"github.com/gin-gonic/gin"
-	"gitee.com/king19800105/husms_sms_core/routes"
+	"github.com/king19800105/sms_core/routes"
 )
 
 func main() {
