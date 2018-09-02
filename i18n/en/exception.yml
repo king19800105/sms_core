@@ -1,5 +1,5 @@
 exception:
-  container init: container init failed
+  container-init: container init failed
   db-connection: database connection failed
   cache-connection: cache connection failed
   queue-client-connection: queue connection failed
