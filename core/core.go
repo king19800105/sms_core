@@ -3,6 +3,7 @@ package core
 import (
 	"github.com/sarulabs/di"
 	"github.com/king19800105/sms_core/app/providers"
+	"github.com/gin-gonic/gin"
 )
 
 const CORE_FILE = "config/core.yml"
@@ -13,6 +14,7 @@ type Core struct {
 	db         DBConnection
 	cache      CacheConnection
 	queue      QueueConnection
+	route      *gin.Engine
 	resource   FileContent
 	fileParser Parser
 }
@@ -55,6 +57,9 @@ func Load() {
 		done()
 }
 
+func SetRoute(r *gin.Engine) {
+	core.route = r
+}
 
 // Core对象构建
 func NewCore(parser interface{}) *Core {
@@ -161,6 +166,13 @@ func (c *Core) setContainer() []di.Def {
 			Scope: "core",
 			Build: func(ctn di.Container) (interface{}, error) {
 				return c.fileParser, nil
+			},
+		},
+		{
+			Name:  "route",
+			Scope: "core",
+			Build: func(ctn di.Container) (interface{}, error) {
+				return c.route, nil
 			},
 		},
 	}

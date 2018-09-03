@@ -7,6 +7,7 @@ import (
 
 func Run(r *gin.Engine) {
 	// 加载核心模块
+	core.SetRoute(r)
 	core.Load()
 	// 设置模式
 	// setMode()

@@ -4,7 +4,6 @@ import (
 	"github.com/nsqio/go-nsq"
 	"time"
 	"strconv"
-	"github.com/king19800105/sms_core/app/constants/message"
 )
 
 type NSQConnection struct {
@@ -68,7 +67,7 @@ func (n *NSQConnection) AddHandler(f interface{}) QueueConnection {
 	handle, ok := f.(nsq.HandlerFunc)
 
 	if !ok {
-		panic(message.ILLEGAL_TYPE)
+		panic("nsq add handler func type error")
 	}
 
 	n.Consumer.AddHandler(handle)
@@ -77,6 +76,21 @@ func (n *NSQConnection) AddHandler(f interface{}) QueueConnection {
 }
 
 // 运行队列
-func (n *NSQConnection) Run(connectCount int, do func(*NSQConnection, int)) {
-	go do(n, connectCount)
+func (n *NSQConnection) Run() {
+	err := n.Consumer.ConnectToNSQD(n.Source)
+
+	if nil != err {
+		panic(err)
+	}
 }
+
+// 案例：异步执行，开启10个消费端来消费
+// func runConsumerExample() {
+// 	go func() {
+// 		for i := 0; i < 10; i++ {
+// 			x.InitConsumer(...).
+// 				AddHandler(...).
+// 				Run()
+// 		}
+// 	}()
+// }
